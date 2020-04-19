@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107277314-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-107277314-3');
+    </script>
+
+    <!-- Dôležité komenty -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Meno stránky -->
+    <title>BMI a BMR kalkulačka</title>
+    <meta name="author" content="Igor Šátek">
+    <!-- Favicon - Logo pre kartu prehliadača -->
+    <link rel="shortcut icon" type="image/png" href="#">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!-- Font Awesome 4.7.0 -->
+    <link rel="stylesheet" href="css/fontAwesome/css/font-awesome.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/apps-style.css">
+</head>
+
+<body>
+    <div class="mainContainer">
+        <h2>Vyplňte nasledovné údaje</h2>
+        <div class="calculatorContainer">
+            <form action="/action_page.php">
+                <div id="calculatorLeftSide">
+                    <div id="pohlavie">
+                        <input id="radioMuz" type="radio" name="pohlavie" value="male"> Muž<br>
+                        <input id="radioZena" type="radio" name="pohlavie" value="female"> Žena<br>
+                    </div>
+                    <div id="zivotnyStil">
+                        <input id="radioSedavyZivot" type="radio" name="zivotnyStil" value="sedavy">Sedavý život<br>
+                        <input id="radioJemneAktivnyZivot" type="radio" name="zivotnyStil" value="sedavy">Jemne aktívny
+                        život<br>
+                        <input id="radioStredneAktivnyZivot" type="radio" name="zivotnyStil" value="sedavy">Stredne
+                        aktívny
+                        život<br>
+                        <input id="radioVelmyAktivnyZivot" type="radio" name="zivotnyStil" value="sedavy">Veľmi aktívny
+                        život<br>
+                        <input id="radioExtremneAktivnyZivot" type="radio" name="zivotnyStil" value="sedavy">Extrémne
+                        aktívny
+                        život<br>
+                    </div>
+                </div>
+                <div id="calculatorRightSide">
+                    <div id="vaha">
+                        <input id="input1" type="text" name="Váha" placeholder="Váha">
+                    </div>
+                    <div id="vek">
+                        <input id="input2" type="text" name="Vek" placeholder="Vek">
+                    </div>
+                    <div id="vyska">
+                        <input id="input3" type="text" name="Výška" placeholder="Výška">
+                    </div>
+
+                    <button class="btn" type="button" onclick="countBMIandBMR()">
+                        Výsledok
+                    </button>
+                </div>
+            </form>
+
+            <div id="calculatorOutput">
+                <img src="/img/APPS/BMI1.png" class="podvaha" alt="podváha">
+                <img src="/img/APPS/BMI2.png" class="normalnaVaha" alt="normálna váha">
+                <img src="/img/APPS/BMI3.png" class="nadvaha" alt="nadváha">
+                <img src="/img/APPS/BMI4.png" class="obezita" alt="obezita">
+                <img src="/img/APPS/BMI5.png" class="extremnaObezita" alt="extrémna obezita">
+            </div>
+
+            <div id="bmrOutputWraper">
+                <div id="bmiOutput">
+                    <h3></h3>
+                </div>
+                <div id="bmrOutput">
+                    <h3></h3>
+                </div>
+            </div>
+        </div>
+        <div class="inlineBoxChoice">
+            <div onclick="onClickDecisionLoseWeight()" class="chcesSchudnut">
+                <h3 class="">Chceš schudnúť?</h3>
+                <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+            </div>
+            <div onclick="onClickDecisionGainWeight()" class="chcesPribrat">
+                <h3>Chceš pribrať?</h3>
+                <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+            </div>
+        </div>
+        <div class="choiceContainer">
+            <div class="row chudnutie">
+                <h2>Aby ste schudli, musíte zrýchliť svoj metabolizmus.</h2>
+                <p>Hlavný princíp chudnutia je v tom, že musíte jesť tak často, aby ste nemali pocity hladu. Jedzte
+                    častejšie a
+                    menšie
+                    porcie. Pokrmy, ktoré sú na sacharidovej báze jedzte iba doobeda a snažte sa, aby mali čo najmenši
+                    glykemický index. Na obed a olovrant jedzte radšej viac tukov, ako sacharidov. Každú hodinu sa
+                    napite
+                    vody
+                    tak, aby ste splnili požadovaný objem tekutín, ktorý je uvedený nižšie. Dve tretiny tekutín, ktoré
+                    máte za
+                    deň prijať je vhodné vypiť do 12:00 hod., aby ste podporili prirodzenú detoxikáciu organizmu.
+                    Zaraďte do svojho týždenného plánu 2-3 týždenne kardio cvičenia, cca 30 minút denne. Na cvičenie
+                    choďte
+                    pozvoľna a pomaly zvyšujte intenzitu cvičenia. Pamätajte, že telo musí byť zahriate, aby si vo
+                    výkone
+                    neublížilo. Dbajte aj na strečing, najlepšie ešte kým je telo horúce a svaly a šľachy prekrvené. Pri
+                    strečingu je dôležité, aby ste nešli do bolesti, ale maximálne do mierneho pnutia.
+
+                    Je dôležité, aby ste si uvedomili, že je možné, že prvý mesiac vám na váhe bude pribúdať, lebo sa
+                    vám začnú
+                    budovať svaly a nahrádzať tuk a ako isto viete, tak svaly sú tažsie ako tuk. Ak patríte medzi tých,
+                    čo sa do
+                    všetkého hrnú s veľmi veľkou intenzitou, určite nezabudnite ochranovať si kĺby kĺbovou
+                    výživou...overenou,
+                    nie gumovými medvedíkmi :)</p>
+                <div>
+                    <div>
+                        <h3>Pitný režim</h3>
+                        <div class="chudnutie vodaDoobeda">Doobeda vypiť:</div>
+                        <div class="chudnutie vodaPoobede">Poobede vypiť:</div>
+                    </div>
+                    <div>
+                        <div class="chudnutie nadpis">
+                            <h3>Váš denný prídel kolórií by ste si mali v ideálnom prípade rozdeliť nasledovne</h3>
+                        </div>
+                        <div class="chudnutie ranajky">Raňajky: </div>
+                        <div class="chudnutie desiata">Desiata: </div>
+                        <div class="chudnutie obed">Obed: </div>
+                        <div class="chudnutie olovrant">Olovrant: </div>
+                        <div class="chudnutie vecera">Večera: </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row priberanie">
+                <h2>Aby ste pribrali, musíte prijímať viac živín a na nabratie objemu pomôže aj posilňovanie.</h2>
+                <p>Hlavný princíp priberania je v tom, že skonzumujete viac kalórií, ako vaš metabolizmus počas dňa
+                    minie. Váš
+                    denný príjem kalórií si môžete rozdeliť podľa príkladu nižšie. Ak nieste odporcom cvičenia, pomohlo
+                    by vám
+                    cvičenie s vlastnou váhou. Ako dobrý žačiatok by bolo vhodné cvičiť 2-3 krát do týždňa, po dobu cca
+                    45 minút.
+                    Návrhy cvikov sú: kľuky, drepy a zhyby na hrazde. Pri cvičení je najdvôležitejšia technika a preto
+                    si
+                    cviky
+                    najprv nechajte ukázať niekym skúsenejším. Dbajte na to, že ak už nemáte energiu dodržiavať správnu
+                    techniku,
+                    mali by ste si dať prestávku. </p>
+                <div>
+                    <div id="pitny-rezim-wrapper2">
+                        <h3>Pitný režim</h3>
+                        <div class="priberanie vodaDoobeda">Doobeda vypiť:</div>
+                        <div class="priberanie vodaPoobede">Poobede vypiť:</div>
+
+                    </div>
+                    <div id="priberanie-wrapper2">
+                        <div class="priberanie nadpis">
+                            <h3>Váš denný prídel kolórií by ste si mali v ideálnom prípade rozdeliť nasledovne</h3>
+                        </div>
+                        <div class="priberanie ranajky">Raňajky: </div>
+                        <div class="priberanie desiata">Desiata: </div>
+                        <div class="priberanie obed">Obed: </div>
+                        <div class="priberanie olovrant">Olovrant: </div>
+                        <div class="priberanie vecera">Večera: </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="js/apps-script.js"></script>
+</body>
+
+</html>
