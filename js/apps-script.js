@@ -41,7 +41,7 @@ const countBMI = (width, weight) => {
 const imgVisualizedBMI = (BMI) => {
     let bmiOutput = document.querySelector('#bmiOutput h3');
     resetImgActiveClass();
-    
+    document.querySelector('#bmrOutputWraper').classList.add('orangeBG');
     if (BMI < 18.5) {
         bmiOutput.innerHTML = "Tvoje BMI je " + BMI + ", takže máš podváhu.";
         document.querySelector('img.podvaha').classList.add('active');

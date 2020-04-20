@@ -27,34 +27,29 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-    <!-- Font Awesome 4.7.0 -->
-    <link rel="stylesheet" href="css/fontAwesome/css/font-awesome.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="css/apps-style.css">
 </head>
 
 <body>
     <div class="mainContainer">
-        <h2>Vyplňte nasledovné údaje</h2>
+        <div class="titleWrapper">
+            <h2>Vyplňte nasledovné údaje</h2>
+        </div>
+        
         <div class="calculatorContainer">
             <form action="/action_page.php">
                 <div id="calculatorLeftSide">
                     <div id="pohlavie">
-                        <input id="radioMuz" type="radio" name="pohlavie" value="male"> Muž<br>
-                        <input id="radioZena" type="radio" name="pohlavie" value="female"> Žena<br>
+                        <input id="radioMuz" type="radio" name="pohlavie" value="male"><label for="radioMuz"> Muž</label><br>
+                        <input id="radioZena" type="radio" name="pohlavie" value="female"><label for="radioZena"> Žena</label><br> 
                     </div>
                     <div id="zivotnyStil">
-                        <input id="radioSedavyZivot" type="radio" name="zivotnyStil" value="sedavy">Sedavý život<br>
-                        <input id="radioJemneAktivnyZivot" type="radio" name="zivotnyStil" value="sedavy">Jemne aktívny
-                        život<br>
-                        <input id="radioStredneAktivnyZivot" type="radio" name="zivotnyStil" value="sedavy">Stredne
-                        aktívny
-                        život<br>
-                        <input id="radioVelmyAktivnyZivot" type="radio" name="zivotnyStil" value="sedavy">Veľmi aktívny
-                        život<br>
-                        <input id="radioExtremneAktivnyZivot" type="radio" name="zivotnyStil" value="sedavy">Extrémne
-                        aktívny
-                        život<br>
+                        <input id="radioSedavyZivot" type="radio" name="zivotnyStil" value="sedavy"><label for="radioSedavyZivot"> Sedavý život</label><br>
+                        <input id="radioJemneAktivnyZivot" type="radio" name="zivotnyStil" value="sedavy"><label for="radioJemneAktivnyZivot"> Jemne aktívny život</label><br>  
+                        <input id="radioStredneAktivnyZivot" type="radio" name="zivotnyStil" value="sedavy"><label for="radioStredneAktivnyZivot"> Stredne aktívny život</label><br>
+                        <input id="radioVelmyAktivnyZivot" type="radio" name="zivotnyStil" value="sedavy"><label for="radioVelmyAktivnyZivot"> Veľmi aktívny život</label><br>  
+                        <input id="radioExtremneAktivnyZivot" type="radio" name="zivotnyStil" value="sedavy"> <label for="radioExtremneAktivnyZivot"> Extrémne aktívny život</label>
                     </div>
                 </div>
                 <div id="calculatorRightSide">
@@ -94,11 +89,9 @@
         <div class="inlineBoxChoice">
             <div onclick="onClickDecisionLoseWeight()" class="chcesSchudnut">
                 <h3 class="">Chceš schudnúť?</h3>
-                <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
             </div>
             <div onclick="onClickDecisionGainWeight()" class="chcesPribrat">
                 <h3>Chceš pribrať?</h3>
-                <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
             </div>
         </div>
         <div class="choiceContainer">
@@ -129,11 +122,7 @@
                     výživou...overenou,
                     nie gumovými medvedíkmi :)</p>
                 <div>
-                    <div>
-                        <h3>Pitný režim</h3>
-                        <div class="chudnutie vodaDoobeda">Doobeda vypiť:</div>
-                        <div class="chudnutie vodaPoobede">Poobede vypiť:</div>
-                    </div>
+
                     <div>
                         <div class="chudnutie nadpis">
                             <h3>Váš denný prídel kolórií by ste si mali v ideálnom prípade rozdeliť nasledovne</h3>
@@ -144,6 +133,12 @@
                         <div class="chudnutie olovrant">Olovrant: </div>
                         <div class="chudnutie vecera">Večera: </div>
 
+                    </div>
+                    <div>
+                        <h3>Pitný režim</h3>
+                        <div class="chudnutie vodaDoobeda">Doobeda vypiť:</div>
+                        <div class="chudnutie vodaPoobede">Poobede vypiť:</div>
+                        <br><br>
                     </div>
                 </div>
             </div>
@@ -162,12 +157,7 @@
                     techniku,
                     mali by ste si dať prestávku. </p>
                 <div>
-                    <div id="pitny-rezim-wrapper2">
-                        <h3>Pitný režim</h3>
-                        <div class="priberanie vodaDoobeda">Doobeda vypiť:</div>
-                        <div class="priberanie vodaPoobede">Poobede vypiť:</div>
 
-                    </div>
                     <div id="priberanie-wrapper2">
                         <div class="priberanie nadpis">
                             <h3>Váš denný prídel kolórií by ste si mali v ideálnom prípade rozdeliť nasledovne</h3>
@@ -179,10 +169,24 @@
                         <div class="priberanie vecera">Večera: </div>
 
                     </div>
+                                        <div id="pitny-rezim-wrapper2">
+                        <h3>Pitný režim</h3>
+                        <div class="priberanie vodaDoobeda">Doobeda vypiť:</div>
+                        <div class="priberanie vodaPoobede">Poobede vypiť:</div>
+                        <br><br>
+
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="footer">
+            <br></br>
+            Copyright &copy; 2020 All Rights Reserved By
+            <br/>
+            <span>Some Fanatics group</span>
+        </div>
     </div>
+
     <!-- JavaScript -->
     <script src="js/apps-script.js"></script>
 </body>
