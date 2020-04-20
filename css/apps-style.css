@@ -265,6 +265,7 @@ div.chcesPribrat.selected h3{
 
 .row.chudnutie,
 .row.priberanie {
+    visibility: hidden;
     width: 0;
     height: 0;
     padding: 0;
@@ -276,6 +277,7 @@ div.chcesPribrat.selected h3{
 
 .row.chudnutie.displayed,
 .row.priberanie.displayed {
+    visibility: visible;
     padding: 0 10px;
     width: 100%;
     height: 100%;
