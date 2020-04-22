@@ -6,7 +6,11 @@ Autor: Igor Šátek
 Version: 1.1
 ================================================ */
 
-
+:root {
+    --btn-and-input-width: 185px;
+    --btn-and-input-height: 16px;
+  }
+  
 html {
     box-sizing: border-box;
     font-size: 64%;
@@ -104,13 +108,15 @@ input[type="radio"]:checked::before {
   background-color: rgba(243, 73, 6, 0.658);
 }
 #calculatorRightSide input {
-    padding: 7px;
+    padding: 7px 0;
     margin-bottom: 8px;
     border: 1px solid grey;
     border-radius: 4px;
     background-color: rgba(128, 128, 128, 0.397);
     color: white;
     text-align: center;
+    width: var(--btn-and-input-width);
+    height: var(--btn-and-input-height);
 }
 
 #calculatorRightSide input::-webkit-input-placeholder {
@@ -143,13 +149,15 @@ input[type="radio"]:checked::before {
     padding: 3px;
 }
 
-.btn {
-    padding: 7px;
-    border: 2px solid grey;
+button.btn {
+    box-sizing: content-box;
+    width: var(--btn-and-input-width);
+    height: var(--btn-and-input-height);
+    padding: 7px 0;
+    border: 1px solid grey;
     border-radius: 4px;
     background-color: grey;
     color: white;
-    width: 174px;
     box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
 }
 
@@ -335,7 +343,7 @@ div.chcesPribrat.selected h3{
     }
     #calculatorLeftSide {
         top: 8%;
-        transform: translateX(-48%);
+        transform: translateX(-42%);
         width: 85%;
         font-size: 2.8rem;
     }
@@ -346,14 +354,10 @@ div.chcesPribrat.selected h3{
     #calculatorOutput {
         text-align: center;
     }
-    #calculatorRightSide input {
+    #calculatorRightSide input,
+    button.btn {
         width: 280px;
         height: 25px;
-        font-size: 2rem;
-    }
-    .btn {
-        width: 296px;
-        height: 43px;
         font-size: 2rem;
     }
 }
@@ -380,12 +384,9 @@ div.chcesPribrat.selected h3{
     #calculatorOutput {
         text-align: center;
     }
-    #calculatorRightSide input {
+    #calculatorRightSide input,
+    button.btn {
         width: 230px;
         height: 20px;
-    }
-    .btn {
-        width: 246px;
-        height: 40px;
     }
 }
